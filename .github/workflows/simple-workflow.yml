@@ -21,7 +21,7 @@ jobs:
           args: https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
 
       - name: Run validator
-      - uses: actions/setup-java@v2
+        uses: actions/setup-java@v2
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
