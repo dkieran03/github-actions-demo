@@ -20,4 +20,4 @@ jobs:
         run: echo "got here"
 
       - name: Do something else
-        run: echo "something else"
+        run: echo "another test"
