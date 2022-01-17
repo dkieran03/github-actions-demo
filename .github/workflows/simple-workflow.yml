@@ -15,14 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Download validator_cli
-        uses: wei/wget@v1
-        with:
-          args: https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+      - name: Test if
+        if: "!contains(github.event.head_commit.message, '[skip package mod]')"
+        run: echo "got here"
 
-      - name: Run validator
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '17'
-      - run: java -jar validator_cli.jar
+      - name: Do something else
+        run: echo "something else"
