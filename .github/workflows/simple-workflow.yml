@@ -28,7 +28,8 @@ jobs:
       
       - name: Render diagram
         run: node_modules/.bin/mmdc -i test.mmd -o test.svg
-        
+           
+  
       - name: Update repo
-        run: git add test.svg; git commit -m "[skip ci]"; git push origin ${GITHUB_REF##*/}
+        run: git config --global user.email "ci@render.diagrams"; git config --global user.name "Render diagrams"; git add test.svg; git commit -m "[skip ci]"; git push origin ${GITHUB_REF##*/}
       
