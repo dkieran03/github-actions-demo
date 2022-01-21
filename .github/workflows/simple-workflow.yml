@@ -27,7 +27,7 @@ jobs:
         run: cp node_modules/mermaid/dist/mermaid.min.js node_modules/mermaid.cli/
       
       - name: Render diagram
-        run: node_modules/.bin/mmdc -i test.mmd -o test2.svg
+        run: for f in *.mmd; do node_modules/.bin/mmdc -i $f -o $(basename $f).svg
            
       - name: Update repo
         run: |
